@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="ascets/images/logo.svg">
+    <link rel="stylesheet" href="./css/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="spiner.css">
+    
+    <script src="index.js" type="module" defer></script>
+    
     <title>Inmobiliaria</title>
 </head>
 
 <body>
-    <header>
-        <div class="container-header">
-            <div class="logo">
-                <a href="#">
-                    <img src="ascets/images/logo.svg" alt="Logo Principal">
-                </a>
+    <header class="header d-flex p-3">
+        <div class="row  container-header">
+            <div class="col-md-6 ">
+                <div class="logos d-flex px-4">
+                    <a href="#"><img src="ascets/images/logo.svg" alt="Logo Principal"></a>
+                </div>
             </div>
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Anuncios</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </nav>
-
-                <div class="socialMedia">
+            <div class="col-md-4">
+                <div class="menu-h d-flex justify-content-end">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Nosotros</a></li>
+                            <li><a href="#">Anuncios</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="social-media d-flex justify-content-center">
                     <a href="#">
                         <img src="ascets/social media/facebook.png" alt="">
                     </a>
@@ -42,108 +51,69 @@
                 </div>
             </div>
         </div>
-        <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
+        <div class="spinner-container">
+            <img src="ascets/images/logo.svg" alt="Cargando..." id="spinner" class="spinner" style="display: none;">
+        </div>
+        <!-- <h1 class="text-succes">Venta de Casas y Departamentos Exclusivos de Lujo</h1> -->
     </header>
     <div class="container-sections">
         <section>
-            <h2>Más sobre nosotros</h2>
-
-            <div id="container-details" class="container-details">
-                <div class="container-detail">
-                    <img src="ascets/images/icono1.svg" alt="Icono Seguridad">
-                    <h3>SEGURIDAD</h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Eos deserunt doloremque libero. Alias, dignissimos? Sunt 
-                        explicabo aspernatur expedita maxime excepturi ducimus incidunt,
-                        ullam quis qui numquam repellendus dolorum et. Repellat.
-                    </p>
-                </div>
-
-                <div class="container-detail">
-                    <img src="ascets/images/icono2.svg" alt="Icono Precio">
-                    <h3>EL MEJOR PRECIO</h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Eos deserunt doloremque libero. Alias, dignissimos? Sunt 
-                        explicabo aspernatur expedita maxime excepturi ducimus incidunt,
-                        ullam quis qui numquam repellendus dolorum et. Repellat.
-                    </p>
-                </div>
-                <div class="container-detail">
-                    <img src="ascets/images/icono3.svg" alt="Icono Tiempo">
-                    <h3>A TIEMPO</h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Eos deserunt doloremque libero. Alias, dignissimos? Sunt 
-                        explicabo aspernatur expedita maxime excepturi ducimus incidunt,
-                        ullam quis qui numquam repellendus dolorum et. Repellat.
-                    </p>
-                </div>                
+            <div class="container-nosotros p-3">
+                <h2>Más sobre nosotros</h2>
+                <!-- contenedor -->
+                <!-- <div class="row  d-flex pt-2 "> -->
+                <div id="container-cards-uno" class="row pt-3 g-3"></div>
+                <!-- </div> -->
             </div>
-            
-            
-            <h2>Casas y Departamentos en Venta</h2>
-            <div class="container-cards">
-                <div class="cards">
-                    <img class="imagen-anuncio" src="ascets/images/anuncio1.jpg" alt="Imagen casa">
-                    <div class="detalles">
-                        <h3>Casas de Lujo en el Lago</h3>
-                        <p>Casas en el lago con exelente vista, acabados de lujo a un exelente precio</p>
-                        <label for="card-uno">U$S350.000</label>
-                        <div class="container-iconos-card">
-                            <img src="ascets/images/icono_wc.svg" alt="logo baño">
-                            <label for="banio">3</label>
-                            <img src="ascets/images/icono_estacionamiento.svg" alt="logo auto">
-                            <label for="auto">3</label>
-                            <img src="ascets/images/icono_dormitorio.svg" alt="logo cama">
-                            <label for="cama">4</label>
-                        </div>
-                        <div class="btn-propiedad">
-                            <button class="btn" type="button">Ver Propiedad</button>
-                        </div>
-                    </div>
+            <!--muestra -->
+            <template id="card-template">
+                <div class="col-md-4">
+                  <div class="card-nosotros h-100 d-flex flex-column align-items-center text-center gap-3 p-3">
+                    <img class="imagen-sectiom-dos" src="" alt="Icono Seguridad">
+                    <h3></h3>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="cards">
-                    <img class="imagen-anuncio" src="ascets/images/anuncio2.jpg" alt="Imagen casa">
-                    <div class="detalles">
-                        <h3>Casas de Lujo en el Lago</h3>
-                        <p>Casas en el lago con exelente vista, acabados de lujo a un exelente precio</p>
-                        <label for="card-uno">U$S350.000</label>
-                        <div class="container-iconos-card">
-                            <img src="ascets/images/icono_wc.svg" alt="logo baño">
-                            <label for="banio">3</label>
-                            <img src="ascets/images/icono_estacionamiento.svg" alt="logo auto">
-                            <label for="auto">3</label>
-                            <img src="ascets/images/icono_dormitorio.svg" alt="logo cama">
-                            <label for="cama">4</label>
-                        </div>
-                        <div class="btn-propiedad">
-                            <button class="btn" type="button">Ver Propiedad</button>
-                        </div>
-                    </div>
+            </template>   
+
+            
+
+            <div class="container-venta p-3">
+                <h2>Casas y Departamentos en Venta</h2>
+                <div  id="container-cards" class="row pt-3 g-3">
                 </div>
-                <div class="cards">
-                    <img class="imagen-anuncio" src="ascets/images/anuncio3.jpg" alt="Imagen casa">
-                    <div class="detalles">
-                        <h3>Casas de Lujo en el Lago</h3>
-                        <p>Casas en el lago con exelente vista, acabados de lujo a un exelente precio</p>
-                        <label for="card-uno">U$S350.000</label>
-                        <div class="container-iconos-card">
-                            <img src="ascets/images/icono_wc.svg" alt="logo baño">
-                            <label for="banio">3</label>
-                            <img src="ascets/images/icono_estacionamiento.svg" alt="logo auto">
-                            <label for="auto">3</label>
-                            <img src="ascets/images/icono_dormitorio.svg" alt="logo cama">
-                            <label for="cama">4</label>
-                        </div>
-                        <div class="btn-propiedad">
-                            <button class="btn" type="button">Ver Propiedad</button>
-                        </div>
-                    </div>
+                <div class="ver-todas">
+                    <button type="button">Ver Todas</button>
                 </div>
             </div>
-            <div class="ver-todas">
+
+            <!--muestra -->
+            <template id="card-template-dos">
+                <div class="col-xl-4">
+                    <div class="card card-venta  h-100 d-flex flex-column align-items-center  gap-3">
+                        <img class="imagen-anuncio" src="" alt="Imagen casa">
+                        <div class="card-body g-3"> 
+                            <h3></h3>
+                            <p></p>
+                            <label class="precio"></label>
+                            <div class="container-iconos-card d-flex justify-content-center p-3 gap-4">
+                                <img class="icon-uno" src="" alt="logo baño">
+                                <label class="banios"></label>
+                                <img class="icon-dos" src="" alt="logo auto">
+                                <label class="autos"></label>
+                                <img class="icon-tres" src="" alt="logo cama">
+                                <label class="camas"></label>
+                            </div>
+                            <div class="card-foter">
+                                <button class="btn" type="button">Ver Propiedad</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            
+            
+            <!-- <div class="ver-todas">
                 <button type="button">Ver Todas</button>
             </div>
 
@@ -156,61 +126,87 @@
                     </div>
                 </div>
                
-            </div>
+            </div> -->
 
-            <div class="container-blog">
-                <div class="blog-uno">
-                    <h2>Nuestro Blog</h2>
-                    <div class="opciones-casas">
-                        <img src="ascets/images/blog1.jpg" alt="imagen terraza">
-                        <div class="texto">
-                            <h3>Terrazas en el techo de tu casa</h3>
-                            <hr class="barra-color">
-                            <label for="">Escrito el: 20/10/2019 por: Admin</label>
-                            <p>Consejos para construir una terraza en el techo de tu casa, con los mejores materiales y ahorrando dinero</p>
-                        </div>
-                    </div>
-                    <div class="opciones-casas">
-                        <img src="ascets/images/blog2.jpg" alt="imagen piscina">
-                        <div class="texto">
-                            <h3>Guia para la decoracion de tu hogar</h3>
-                            <hr class="barra-color">
-                            <label for="">Escrito el: 20/10/2019 por: Admin</label>
-                            <p>Maximiza el espacio en u hogar con esta guia, aprende a combinar muebles y colores para darle vida a tu espacio</p>
-                        </div>
+            <div class="container-contacto">
+                <div class="contac">
+                    <div class="contac-child">
+                        <h2>Encuentra la casa de tus sueños</h2>
+                        <p>Llena el formulario de contacto y un asesor se pondra en contacto a la brevedad</p>
+                        <button class="btn-contacto">Contactanos</button>
                     </div>
                 </div>
-                <div class="blog-dos">
-                    <h2>Comentarios</h2>
-                    <div class="comentarios">
-                        <div class="texto-coment">
-                            <img src="ascets/images/comilla.svg" alt="logo comillas">
-                            <p>El personal se comporto de una exelente forma, muy buena atencion y la casa que me ofrecieron cumple con todas mis expectativas.</p>
+               
+            </div>
+
+            <div class="container-blog-bootstrap ">
+                <div class="row m-4">
+                    <div class="col-xl-8">
+                        <div class="row">
+                            <h2>Nuestro Blog</h2>
                         </div>
-                        <div class="usuario">
-                            <label for="">- Juan Perez</label>
+                        <div class="row mt-4 d-flex">
+                            <div class="col-md-4 opciones-casas d-flex justify-content-center">
+                                <img src="ascets/images/blog1.jpg" alt="imagen terraza">
+                            </div>
+                            <div class="col-md-8 texto">
+                                <h3>Terrazas en el techo de tu casa</h3>
+                                 <div class="barra-color"></div>
+                                <label for="">Escrito el: 20/10/2019 por: Admin</label>
+                                <p>Consejos para construir una terraza en el techo de tu casa, con los mejores materiales y ahorrando dinero</p>
+                            </div>
+                        </div>
+                        <div class="row  pt-4 d-flex">
+                            <div class="col-md-4 opciones-casas d-flex justify-content-center">
+                                <img src="ascets/images/blog2.jpg" alt="imagen piscina">
+                            </div> 
+                            <div class="col-md-8 texto">
+                                <h3>Guia para la decoracion de tu hogar</h3>
+                                <div class="barra-color"></div>
+                                <label for="">Escrito el: 20/10/2019 por: Admin</label>
+                                <p>Maximiza el espacio en u hogar con esta guia, aprende a combinar muebles y colores para darle vida a tu espacio</p>
+                            </div> 
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="row">
+                            <h2>Comentarios</h2>
+                        </div>
+                        <div class="row comentarios d-flex ">
+                            <div class="texto-coment">
+                                <img src="ascets/images/comilla.svg" alt="logo comillas">
+                                <p>El personal se comporto de una exelente forma, muy buena atencion y la casa que me ofrecieron cumple con todas mis expectativas.</p>
+                            </div>
+                            <div class="usuario d-flex">
+                                <label for="">- Juan Perez</label>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
     </div>
+    <script src="./js/js/bootstrap.bundle.min.js"></script>
 </body>
 <footer>
-    <div class="container-footer">
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Anuncios</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
+    <div class="row container-footer m-0 pt-2 ">
+        <div class="col-md-6">
+            <div class="menuf d-flex justify-content-stard">
+                <nav>
+                    <ul class="d-flex">
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Anuncios</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="derechos">
-            <label for="">Todos los Derechos Reservados 2020 &copy;</label>
+        <div class=" col-md-6">
+            <div class="conp d-flex justify-content-end">
+                <p>Todos los Derechos Reservados &copy; 2024</p>
+            </div>
         </div>
     </div>
 </footer>
